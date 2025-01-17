@@ -8,8 +8,16 @@
 #Input: Also provide Username and Token by exporting them locally
 # i.e. export username=""  and export token=""
 ###################
+# Function to let user know wrong inputs
+function helper {
+  expected_cmd_args=2
+  if [[ $# -ne $expected_cmd_args ]]; then
+    echo "Please provide required arguments: repository owner and repository name."
+    exit 1
+  fi
+}
 
-helper()
+helper "$@"
 
 # GitHub API URL
 API_URL="https://api.github.com"
@@ -46,14 +54,6 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
-
-#Function to let user know they are not providing input params
-function helper{
-    expected_cmd_args=2
-    if[$# -ne $expected_cmd_args]; then
-        echo "Please provide required Parameters"
-    }
-
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
