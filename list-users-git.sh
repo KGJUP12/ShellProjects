@@ -53,8 +53,6 @@ function helper{
     if[$# -ne $expected_cmd_args]; then
         echo "Please provide required Parameters"
     }
-}
-
 
 # Main script
 
