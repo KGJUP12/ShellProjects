@@ -48,7 +48,7 @@ function list_users_with_read_access {
 }
 
 #Function to let user know they are not providing input params
-function helper(){
+function helper{
     expected_cmd_args=2
     if[$# -ne $expected_cmd_args]; then
         echo "Please provide required Parameters"
