@@ -1,5 +1,16 @@
 #!/bin/bash
 
+##################
+#Author: Kavindra
+#Date: 17-Jan-25
+#About: Script to get users for an repo
+#Input: 2 CMD args are needed repositoryOwner and repositoryName
+#Input: Also provide Username and Token by exporting them locally
+# i.e. export username=""  and export token=""
+###################
+
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -35,6 +46,16 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
+
+#Function to let user know 
+function helper(){
+    expected_cmd_args=2
+    if($# -ne expected_cmd_args); then
+        echo "Please provide required Parameters"
+    fi
+    }
+}
+
 
 # Main script
 
